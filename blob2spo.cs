@@ -76,10 +76,12 @@ namespace test
             string clientId = GetSetting("SP_APP_ID");
             string clientSecret = GetSetting("SP_APP_SECRET");
             string aadTenantId = GetSetting("AAD_TENANT_ID");
+            string tenantUrl = GetSetting("TENANT_URL");
+
             var body = new FormUrlEncodedContent(new Dictionary<string, string> {
                 { "grant_type", "client_credentials" },
                 { "client_secret", clientSecret },
-                { "resource", $"00000003-0000-0ff1-ce00-000000000000/enispa.sharepoint.com@{aadTenantId}" },
+                { "resource", $"00000003-0000-0ff1-ce00-000000000000/{tenantUrl}@{aadTenantId}" },
                 { "client_id", $"{clientId}@{aadTenantId}" }
             });
             var result = await client.PostAsync(
