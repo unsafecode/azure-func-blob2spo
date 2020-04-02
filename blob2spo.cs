@@ -8,7 +8,7 @@ using Microsoft.Azure.WebJobs.Host;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 
-namespace eni
+namespace test
 {
     public static class blob2spo
     {
@@ -19,7 +19,7 @@ namespace eni
             client = new HttpClient();
             client.Timeout = TimeSpan.FromMinutes(60);
         }
-        
+
         [FunctionName("blob2spo")]
         public static async Task Run(
             [BlobTrigger("drop/{name}", Connection = "ricchiblob_STORAGE")]Stream myBlob,
