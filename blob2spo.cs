@@ -39,8 +39,7 @@ namespace test
 
         public static string GetSetting(string name)
         {
-            return name + ": " +
-                System.Environment.GetEnvironmentVariable(name, EnvironmentVariableTarget.Process);
+            return System.Environment.GetEnvironmentVariable(name, EnvironmentVariableTarget.Process);
         }
 
         private static async Task UploadFile(Stream myBlob, string name, string token, ILogger log)
