@@ -85,7 +85,7 @@ namespace test
                 { "client_id", $"{clientId}@{aadTenantId}" }
             });
             var result = await client.PostAsync(
-                $"https://accounts.accesscontrol.windows.net/{aadTenantId}/tokens/OAuth/2",
+                $"https://accounts.accesscontrol.windows.net/{tenantUrl}/tokens/OAuth/2",
                 body);
 
             result.EnsureSuccessStatusCode();
